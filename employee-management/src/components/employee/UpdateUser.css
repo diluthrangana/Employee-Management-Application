@@ -1,0 +1,69 @@
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f4f4f4;
+}
+  
+/* Form Title Styling */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #343a40;
+}
+  
+/* Form Styling */
+form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px; /* Space between input fields */
+}
+  
+/* Input Fields Styling */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Input Focus State */
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+  
+/* Submit Button Styling */
+.submit-button {
+    width: 100%; /* Full width button */
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+/* Submit Button Hover State */
+.submit-button:hover {
+    background-color: #0056b3;
+}

@@ -1,50 +1,76 @@
-/* Dashboard.css */
+/* Dashboard Container */
+.dashboard-container {
+    margin-top: 40px;
+    max-width: 100%; /* Make sure the container is full width */
+}
 
+/* Table Heading */
 .table-heading {
+    font-size: 28px;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 2rem;
-  }
-  
-  .styled-table {
+    color: #343a40;
+    margin-bottom: 30px;
+}
+
+/* Table Styling */
+.styled-table {
+    width: 100%; /* Ensure the table takes the full width */
+    background-color: white;
     border-collapse: collapse;
-    font-size: 1.2rem;
-    min-width: 100%;
-    background-color: #f8f9fa;
-  }
-  
-  .styled-table thead tr {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-  }
-  
-  .styled-table tbody tr {
-    text-align: center;
-    background-color: #ffffff;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .styled-table tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2;
-  }
-  
-  .styled-table tbody tr:hover {
-    background-color: #d0e6ff;
-    cursor: pointer;
-  }
-  
-  .styled-table tbody td {
-    padding: 12px;
-  }
-  
-  .styled-table tbody td button {
-    margin: 0 5px;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .styled-table tbody td button:hover {
-    transform: scale(1.1);
-  }
-  
+    font-size: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+/* Table Head */
+.styled-table thead tr {
+    background-color: #6c757d;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Table Row Styles */
+.styled-table tbody tr {
+    background-color: #f9f9f9; /* Set a single background color for all rows */
+    border-bottom: 1px solid #dddddd; /* Keep the border between rows */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1; /* Change color on hover */
+}
+
+/* Table Cell Padding */
+.styled-table td,
+.styled-table th {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Buttons Styling */
+.action-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 2px solid transparent; /* Set a transparent border */
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Hover Effects for Action Buttons */
+.action-btn:hover {
+    opacity: 0.9;
+    border: 2px solid #007bff; /* Change border color on hover */
+    background-color: white; /* Remove background color */
+}
+
+/* Button Colors */
+.btn-primary {
+    color: #007bff; /* Set text color for primary button */
+}
+
+.btn-danger {
+    color: #dc3545; /* Set text color for danger button */
+}

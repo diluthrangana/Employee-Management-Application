@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Table, Button } from 'react-bootstrap';
-import './Dashboard.css';  // Add this for custom styles
 import { useNavigate } from 'react-router-dom';
+import './Dashboard.css';  // Link to your custom styles
 
 export default function Dashboard() {
   const [employees, setEmployees] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEmployees = async () => {
@@ -21,33 +21,31 @@ export default function Dashboard() {
       }
     };
 
-    fetchEmployees(); 
+    fetchEmployees();
   }, []);
 
   const handleDelete = async (employeeId) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/employee/${employeeId}`, {  // Use backticks here
-        method: "DELETE",
+      const response = await fetch(`http://localhost:8080/api/employee/${employeeId}`, {
+        method: 'DELETE',
       });
       
       if (!response.ok) {
         throw new Error('Failed to delete employee');
       }
   
-      // Remove the employee from the state after successful deletion
       setEmployees((prevEmployees) => prevEmployees.filter(emp => emp.id !== employeeId));
     } catch (error) {
       console.error('Error deleting employee:', error);
     }
   };
 
-  const handleUpdate = (employeeId) =>{
-    navigate(`/update/${employeeId}`)
-  }
-  
+  const handleUpdate = (employeeId) => {
+    navigate(`/employee/${employeeId}`);
+  };
 
   return (
-    <Container>
+    <Container className="dashboard-container">
       <Row>
         <Col>
           <h1 className="table-heading">Employees</h1>
@@ -58,7 +56,7 @@ export default function Dashboard() {
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Department</th>
-                <th>Action</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -69,8 +67,12 @@ export default function Dashboard() {
                   <td>{employee.phone}</td>
                   <td>{employee.department}</td>
                   <td>
-                    <Button variant="outline-primary" onClick={()=>handleUpdate(employee.id)} size="sm">Edit</Button>{' '}
-                    <Button variant="outline-danger" onClick={()=>handleDelete(employee.id)} size="sm">Delete</Button>
+                    <Button variant="primary" className="action-btn" onClick={() => handleUpdate(employee.id)}>
+                      Edit
+                    </Button>{' '}
+                    <Button variant="danger" className="action-btn" onClick={() => handleDelete(employee.id)}>
+                      Delete
+                    </Button>
                   </td>
                 </tr>
               ))}
