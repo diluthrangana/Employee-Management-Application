@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; 
 import './UpdateUser.css';
+import { useNavigate } from 'react-router-dom'; 
 
 export default function UpdateUser() {
     const { id } = useParams(); 
@@ -12,6 +13,7 @@ export default function UpdateUser() {
     });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchEmployee = async () => {
@@ -56,6 +58,7 @@ export default function UpdateUser() {
             const data = await response.json();
             console.log('Employee updated:', data);
             alert('Employee updated successfully!');
+            navigate('/'); 
         } catch (err) {
             console.error(err);
             alert('Failed to update employee');
